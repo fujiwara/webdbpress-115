@@ -15,7 +15,8 @@ func main() {
 
   // 設定されているflagについて環境変数があればそれでデフォルトを埋める
 	flag.VisitAll(func(f *flag.Flag) {
-		if v, e := os.LookupEnv("MYAPP_" + strings.ToUpper(f.Name)); e {
+		name := "MYAPP_" + strings.ToUpper(f.Name)
+		if v, e := os.LookupEnv(name); e {
 			f.Value.Set(v)
 		}
 	})

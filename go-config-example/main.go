@@ -12,7 +12,8 @@ type Config struct {
 
 func main() {
   var conf Config
-  if err := config.LoadWithEnv(&conf, "config.yaml"); err != nil {
+  err := config.LoadWithEnv(&conf, "config.yaml")
+  if err != nil {
     fmt.Println(err)
     return
   }
