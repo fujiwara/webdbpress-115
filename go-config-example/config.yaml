@@ -1,0 +1,3 @@
+# yaml
+api_token: '{{ must_env "API_TOKEN" }}'
+profile: '{{ env "PROFILE" "default" }}'
